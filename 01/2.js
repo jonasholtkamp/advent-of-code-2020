@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 const run = numbers => {
   for (const number1 of numbers) {
     for (const number2 of numbers) {
@@ -11,9 +9,5 @@ const run = numbers => {
     }
   }
 }
-
-const numbers = fs.readFileSync('./1/input.txt', 'utf8').trim().split('\n').map(v => parseInt(v))
-
-console.log(run(numbers))
 
 module.exports = run

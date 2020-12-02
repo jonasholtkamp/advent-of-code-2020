@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 const run = input => {
   return input
     .map(line => {
@@ -11,9 +9,5 @@ const run = input => {
     })
     .length
 }
-
-const input = fs.readFileSync('./2/input.txt', 'utf8').trim().split('\n')
-
-console.log(run(input))
 
 module.exports = run
