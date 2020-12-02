@@ -3,11 +3,11 @@ const fs = require('fs')
 const run = input => {
   return input
     .map(line => {
-      const [, firstOccurence, secondOccurence, letter, password] = line.match(/(\d+)-(\d+)\s(\w):\s(\w+)/)
-      return { firstOccurence, secondOccurence, letter, password }
+      const [, firstOccurrence, secondOccurrence, letter, password] = line.match(/(\d+)-(\d+)\s(\w):\s(\w+)/)
+      return { firstOccurrence, secondOccurrence, letter, password }
     })
     .filter(policy => {
-      return policy.password.charAt(policy.firstOccurence - 1) === policy.letter ^ policy.password.charAt(policy.secondOccurence - 1) === policy.letter
+      return policy.password.charAt(policy.firstOccurrence - 1) === policy.letter ^ policy.password.charAt(policy.secondOccurrence - 1) === policy.letter
     })
     .length
 }

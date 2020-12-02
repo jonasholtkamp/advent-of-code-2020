@@ -3,12 +3,12 @@ const fs = require('fs')
 const run = input => {
   return input
     .map(line => {
-      const [, minOccurence, maxOccurence, letter, password] = line.match(/(\d+)-(\d+)\s(\w):\s(\w+)/)
-      return { minOccurence, maxOccurence, letter, password }
+      const [, minOccurrence, maxOccurrence, letter, password] = line.match(/(\d+)-(\d+)\s(\w):\s(\w+)/)
+      return { minOccurrence, maxOccurrence, letter, password }
     })
     .filter(policy => {
-      const actualOccurences = (policy.password.match(new RegExp(policy.letter, 'g')) || []).length
-      return actualOccurences >= policy.minOccurence && actualOccurences <= policy.maxOccurence
+      const actualOccurrences = (policy.password.match(new RegExp(policy.letter, 'g')) || []).length
+      return actualOccurrences >= policy.minOccurrence && actualOccurrences <= policy.maxOccurrence
     })
     .length
 }
