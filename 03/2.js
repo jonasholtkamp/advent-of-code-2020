@@ -21,12 +21,12 @@ const getEncountersForRoute = (map, start, route) => {
 const byMultiplying = (prev, cur) => prev * cur
 
 const run = input => {
-  const threeDimMap = input.map(row => row.split(''))
+  const twoDimMap = input.map(row => row.split(''))
   const start = [0, 0]
   const routes = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
 
   return routes
-    .map(route => getEncountersForRoute(threeDimMap, start, route))
+    .map(route => getEncountersForRoute(twoDimMap, start, route))
     .reduce(byMultiplying)
 }
 
