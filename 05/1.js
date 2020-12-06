@@ -16,7 +16,6 @@ const toSeatId = rowAndColumn => rowAndColumn.row * 8 + rowAndColumn.column
 
 const descending = (a, b) => a - b
 
-
 const run = input => {
   return input
     .map(toRowAndColumn)
